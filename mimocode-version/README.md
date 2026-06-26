@@ -4,7 +4,17 @@ MiMo Code TUI 插件，用于监控 MiMo Token Plan 用量和 DeepSeek 余额。
 
 ## 安装
 
-### 方式一：全局安装（推荐）
+### 最快方式：让 AI 帮你装
+
+直接对 MiMo Code 说：
+
+> 帮我从 https://github.com/Enderman112/mimo-ds-usage-monitor 安装 MiMo Code 版本的插件，全局可用
+
+AI 会自动克隆仓库、安装依赖、配置 `tui.json`。
+
+### 手动安装
+
+#### 方式一：全局安装（推荐）
 
 1. 克隆本仓库
 2. 进入 `mimocode-version/` 目录，安装依赖：
@@ -22,7 +32,7 @@ cd mimocode-version && npm install
 ```
 4. 重启 MiMo Code
 
-### 方式二：项目级安装
+#### 方式二：项目级安装
 
 1. 将 `mimo-usage.tsx`、`ds-balance.tsx`、`package.json` 复制到项目的 `.mimocode/` 目录
 2. 在 `.mimocode/tui.json` 中添加：

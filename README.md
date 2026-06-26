@@ -1,6 +1,6 @@
 # MiMo Usage Plugin
 
-OpenCode TUI 插件，用于在侧边栏实时监控 MiMo Token Plan 用量和 DeepSeek 账户余额。
+OpenCode / MiMo Code TUI 插件，用于在侧边栏实时监控 MiMo Token Plan 用量和 DeepSeek 账户余额。
 
 ## 功能
 
@@ -12,9 +12,19 @@ OpenCode TUI 插件，用于在侧边栏实时监控 MiMo Token Plan 用量和 D
 
 ## 安装
 
-### OpenCode
+### 最快方式：让 AI 帮你装
 
-1. 复制 `mimo-usage.tsx` 和 `ds-balance.tsx` 到你的项目目录
+直接对 MiMo Code 或 OpenCode 说：
+
+> 帮我从 https://github.com/Enderman112/mimo-ds-usage-monitor 安装插件
+
+AI 会自动克隆仓库、安装依赖、配置好一切。
+
+### 手动安装
+
+#### OpenCode
+
+1. 克隆本仓库
 2. 在 `opencode.jsonc` 中添加：
 ```json
 {
@@ -23,13 +33,13 @@ OpenCode TUI 插件，用于在侧边栏实时监控 MiMo Token Plan 用量和 D
 ```
 3. 运行 `npm install` 安装依赖
 
-### MiMo Code
+#### MiMo Code
 
 见 `mimocode-version/` 目录。
 
 ## 使用
 
-在 OpenCode 中运行 slash 命令配置认证信息：
+在 OpenCode / MiMo Code 中运行 slash 命令配置认证信息：
 
 | 命令 | 说明 |
 |------|------|
@@ -62,7 +72,7 @@ OpenCode TUI 插件，用于在侧边栏实时监控 MiMo Token Plan 用量和 D
 ## 技术栈
 
 - SolidJS + `@opentui/solid`（TUI 渲染）
-- `@opencode-ai/plugin`（OpenCode 插件 API）
+- `@opencode-ai/plugin` / `@mimo-ai/plugin`（插件 API）
 - MiMo Token Plan API / DeepSeek Balance API
 
 ## License
