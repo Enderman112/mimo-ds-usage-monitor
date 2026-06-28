@@ -72,7 +72,10 @@ async function fetchUsage(cookie: string): Promise<{ data?: UsageData; error?: s
         },
       },
     )
-    if (!res.ok) return { error: `HTTP ${res.status}` }
+    if (!res.ok) {
+      const hint = res.status === 401 ? "（Cookie 已过期，请重新设置）" : ""
+      return { error: `HTTP ${res.status}${hint}` }
+    }
     const json = await res.json()
     if (json.code !== 0) return { error: json.message || "请求失败" }
     return { data: json.data }
