@@ -255,7 +255,11 @@ function MiMoPanel(props: {
   const noPlan = createMemo(() => {
     const data = usage()
     if (!data) return false
-    return !data.monthUsage?.items?.length && !data.usage?.items?.length && data.monthUsage?.percent == null && data.usage?.percent == null
+    const mItems = data.monthUsage?.items
+    const pItems = data.usage?.items
+    const mPct = data.monthUsage?.percent ?? 0
+    const pPct = data.usage?.percent ?? 0
+    return (!mItems?.length && !pItems?.length && mPct === 0 && pPct === 0)
   })
 
   const hitColor = (p: number) => {
