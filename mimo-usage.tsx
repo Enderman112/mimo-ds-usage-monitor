@@ -235,17 +235,27 @@ function MiMoPanel(props: {
   const monthData = createMemo(() => {
     const data = usage()
     if (!data) return null
-    const item = data.monthUsage.items.find((i) => i.name === "month_total_token")
-    const pct = item?.percent ?? data.monthUsage.percent
+    const items = data.monthUsage?.items
+    const item = items?.find((i) => i.name === "month_total_token")
+    const pct = item?.percent ?? data.monthUsage?.percent
+    if (pct == null) return null
     return { pct, item }
   })
 
   const planData = createMemo(() => {
     const data = usage()
     if (!data) return null
-    const item = data.usage.items.find((i) => i.name === "plan_total_token")
-    const pct = item?.percent ?? data.usage.percent
+    const items = data.usage?.items
+    const item = items?.find((i) => i.name === "plan_total_token")
+    const pct = item?.percent ?? data.usage?.percent
+    if (pct == null) return null
     return { pct, item }
+  })
+
+  const noPlan = createMemo(() => {
+    const data = usage()
+    if (!data) return false
+    return !data.monthUsage?.items?.length && !data.usage?.items?.length && data.monthUsage?.percent == null && data.usage?.percent == null
   })
 
   const hitColor = (p: number) => {
@@ -301,6 +311,9 @@ function MiMoPanel(props: {
               <span style={{ fg: pal().muted }}>{loading() ? "加载中..." : "等待数据..."}</span>
             </text>
           }>
+            <Show when={!noPlan()} fallback={
+              <text fg={pal().muted}>当前未订阅套餐</text>
+            }>
             {/* month usage */}
             <Show when={monthData()}>
               {(md) => {
@@ -338,6 +351,7 @@ function MiMoPanel(props: {
                 </>
               }}
             </Show>
+            </Show>{/* end noPlan */}
           </Show>
         }>
           {/* error state */}
