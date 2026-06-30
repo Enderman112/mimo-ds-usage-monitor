@@ -62,7 +62,7 @@ cd mimocode-version && npm install
 | 项目 | OpenCode | MiMo Code |
 |------|----------|-----------|
 | 导入路径 | `@opencode-ai/plugin/tui` | `@mimo-ai/plugin/tui` |
-| 配置文件 | `opencode.jsonc` | `tui.json` |
+| 配置文件 | `tui.jsonc` | `tui.json` |
 | 依赖包 | `@opencode-ai/plugin` | `@mimo-ai/plugin` |
 
 ## 文件说明
