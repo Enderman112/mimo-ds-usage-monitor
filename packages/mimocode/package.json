@@ -13,6 +13,9 @@
     "url": "https://github.com/Enderman112/mimo-ds-usage-monitor/issues"
   },
   "homepage": "https://github.com/Enderman112/mimo-ds-usage-monitor#readme",
+  "exports": {
+    "./tui": "./mimo-usage.tsx"
+  },
   "files": [
     "mimo-usage.tsx",
     "ds-balance.tsx"
