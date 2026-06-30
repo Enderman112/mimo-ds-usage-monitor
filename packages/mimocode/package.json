@@ -1,6 +1,6 @@
 {
   "name": "mimo-ds-usage-plugin-mimocode",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "MiMo Code TUI 插件 - MiMo Token Plan 用量 & DeepSeek 余额监控",
   "keywords": [
     "mimocode",
