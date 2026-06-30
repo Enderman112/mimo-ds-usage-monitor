@@ -71,6 +71,7 @@ cd mimocode-version && npm install
 |------|------|
 | `mimo-usage.tsx` | MiMo Token Plan 用量面板 |
 | `ds-balance.tsx` | DeepSeek 余额面板 |
+| `tui.json` | TUI 插件配置（模板） |
 | `package.json` | 依赖声明 |
 
 ## License
