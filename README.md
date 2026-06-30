@@ -25,7 +25,7 @@ AI 会自动克隆仓库、安装依赖、配置好一切。
 #### OpenCode
 
 1. 克隆本仓库
-2. 在 `tui.json` 中添加：
+2. 在 `tui.jsonc` 中添加：
 ```json
 {
   "plugin": ["./mimo-usage.tsx", "./ds-balance.tsx"]
@@ -65,7 +65,7 @@ AI 会自动克隆仓库、安装依赖、配置好一切。
 |------|------|
 | `mimo-usage.tsx` | MiMo Token Plan 用量面板 |
 | `ds-balance.tsx` | DeepSeek 余额面板 |
-| `tui.json` | TUI 插件配置 |
+| `tui.jsonc` | TUI 插件配置 |
 | `package.json` | 依赖声明 |
 | `mimocode-version/` | MiMo Code 版本 |
 
