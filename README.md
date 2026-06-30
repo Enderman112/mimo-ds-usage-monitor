@@ -1,45 +1,38 @@
-# MiMo Usage Plugin
+# MiMo DS Usage Monitor
 
-OpenCode / MiMo Code TUI 插件，用于在侧边栏实时监控 MiMo Token Plan 用量和 DeepSeek 账户余额。
-
-## 功能
-
-- **MiMo Token Plan 用量** — 显示本月和总套餐的进度条、已用/总量
-- **DeepSeek 余额** — 显示总额、赠金、充值金额
-- 自动刷新（每 60 秒）
-- 根据当前使用的 provider 自动显示对应面板
-- 通过 slash 命令配置认证信息
+OpenCode / MiMo Code TUI 插件，在侧边栏实时监控 MiMo Token Plan 用量和 DeepSeek 账户余额。
 
 ## 安装
 
-### 最快方式：让 AI 帮你装
+### OpenCode
 
-直接对 MiMo Code 或 OpenCode 说：
+```bash
+npm install -g mimo-ds-usage-plugin
+```
 
-> 帮我从 https://github.com/Enderman112/mimo-ds-usage-monitor 安装插件
+在 `~/.config/opencode/tui.json` 中添加：
 
-AI 会自动克隆仓库、安装依赖、配置好一切。
-
-### 手动安装
-
-#### OpenCode
-
-1. 克隆本仓库
-2. 在 `tui.json` 中添加：
 ```json
 {
-  "plugin": ["./mimo-usage.tsx", "./ds-balance.tsx"]
+  "plugin": ["mimo-ds-usage-plugin"]
 }
 ```
-3. 运行 `npm install` 安装依赖
 
-#### MiMo Code
+### MiMo Code
 
-见 `mimocode-version/` 目录。
+```bash
+npm install -g mimo-ds-usage-plugin-mimocode
+```
+
+在 `~/.config/mimocode/tui.json` 中添加：
+
+```json
+{
+  "plugin": ["mimo-ds-usage-plugin-mimocode"]
+}
+```
 
 ## 使用
-
-在 OpenCode / MiMo Code 中运行 slash 命令配置认证信息：
 
 | 命令 | 说明 |
 |------|------|
@@ -48,32 +41,33 @@ AI 会自动克隆仓库、安装依赖、配置好一切。
 | `/ds` | 设置 DeepSeek API Key |
 | `/ds-logout` | 清除 DeepSeek API Key |
 
-### 获取 MiMo Cookie
+## 功能
 
-1. 登录 https://platform.xiaomimimo.com
-2. 打开浏览器 DevTools → Application → Cookies
-3. 复制完整 cookie 字符串（需要 `userId`、`api-platform_slh`、`api-platform_ph`）
+- **MiMo Token Plan 用量** — 显示本月和总套餐的进度条、已用/总量
+- **DeepSeek 余额** — 显示总额、赠金、充值金额
+- 自动刷新（每 60 秒）
+- 根据当前使用的 provider 自动显示对应面板
+- 无套餐时显示"当前未订阅套餐"
+- Cookie 过期时提示重新设置
 
-### 获取 DeepSeek API Key
+## 项目结构
 
-1. 访问 https://platform.deepseek.com/api_keys
-2. 创建并复制 API Key
-
-## 文件说明
-
-| 文件 | 说明 |
-|------|------|
-| `mimo-usage.tsx` | MiMo Token Plan 用量面板 |
-| `ds-balance.tsx` | DeepSeek 余额面板 |
-| `tui.json` | TUI 插件配置 |
-| `package.json` | 依赖声明 |
-| `mimocode-version/` | MiMo Code 版本 |
-
-## 技术栈
-
-- SolidJS + `@opentui/solid`（TUI 渲染）
-- `@opencode-ai/plugin` / `@mimo-ai/plugin`（插件 API）
-- MiMo Token Plan API / DeepSeek Balance API
+```
+mimo-ds-usage-monitor/
+├── packages/
+│   ├── opencode/          # OpenCode 版本
+│   │   ├── mimo-usage.tsx
+│   │   ├── ds-balance.tsx
+│   │   ├── package.json
+│   │   └── README.md
+│   └── mimocode/          # MiMo Code 版本
+│       ├── mimo-usage.tsx
+│       ├── ds-balance.tsx
+│       ├── package.json
+│       └── README.md
+├── tui.json               # OpenCode 配置示例
+└── README.md
+```
 
 ## License
 

@@ -1,9 +1,0 @@
-{
-  "name": "mimo-usage-plugin",
-  "version": "1.0.0",
-  "private": true,
-  "description": "MiMo Token Plan 用量监控插件 - 在 opencode 侧边栏显示套餐用量进度条",
-  "dependencies": {
-    "@opencode-ai/plugin": "latest"
-  }
-}
