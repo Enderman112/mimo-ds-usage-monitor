@@ -10,6 +10,7 @@ import type {
   TuiThemeCurrent,
 } from "@mimo-ai/plugin/tui"
 import { createSignal, createMemo, Show, onMount, onCleanup } from "solid-js"
+import dsBalance from "./ds-balance"
 
 // ── helpers ──
 
@@ -389,6 +390,11 @@ function createSidebarSlot(api: TuiPluginApi): TuiSlotPlugin {
 
 const tui: TuiPlugin = async (api: TuiPluginApi) => {
   api.slots.register(createSidebarSlot(api))
+
+  // Register ds-balance plugin
+  if (dsBalance.tui) {
+    await dsBalance.tui(api)
+  }
 
   api.command?.register(() => [
     {
