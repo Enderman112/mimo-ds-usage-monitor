@@ -1,8 +1,17 @@
 {
   "name": "mimo-ds-usage-plugin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "OpenCode TUI 插件 - MiMo Token Plan 用量 & DeepSeek 余额监控",
-  "keywords": ["opencode", "opencode-plugin", "mimo", "deepseek", "token", "usage", "monitor", "sidebar"],
+  "keywords": [
+    "opencode",
+    "opencode-plugin",
+    "mimo",
+    "deepseek",
+    "token",
+    "usage",
+    "monitor",
+    "sidebar"
+  ],
   "license": "MIT",
   "author": "xuyaoshi",
   "repository": {

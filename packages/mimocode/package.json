@@ -1,8 +1,17 @@
 {
   "name": "mimo-ds-usage-plugin-mimocode",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "MiMo Code TUI 插件 - MiMo Token Plan 用量 & DeepSeek 余额监控",
-  "keywords": ["mimocode", "mimo-code-plugin", "mimo", "deepseek", "token", "usage", "monitor", "sidebar"],
+  "keywords": [
+    "mimocode",
+    "mimo-code-plugin",
+    "mimo",
+    "deepseek",
+    "token",
+    "usage",
+    "monitor",
+    "sidebar"
+  ],
   "license": "MIT",
   "author": "xuyaoshi",
   "repository": {
@@ -21,9 +30,9 @@
     "ds-balance.tsx"
   ],
   "peerDependencies": {
-    "@mimo-ai/plugin": ">=1.0.0",
-    "@opentui/core": ">=0.2.0",
-    "@opentui/solid": ">=0.2.0",
+    "@mimo-ai/plugin": ">=0.1.0",
+    "@opentui/core": ">=0.1.0",
+    "@opentui/solid": ">=0.1.0",
     "solid-js": ">=1.0.0"
   }
 }
